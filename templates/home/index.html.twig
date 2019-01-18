@@ -1,8 +1,8 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %} WildCiné Acceuil{% endblock %}
+{% block title %} WildCiné: Acceuil{% endblock %}
 
-{#{% block header %}{% include 'home/_navbar.html.twig' %}{% endblock %}#}
+{% block header %}{% include 'home/_navbar.html.twig' %}{% endblock %}
 
 {% block body %}
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -25,5 +25,63 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div>
+    <div>
+        <div>
+            <ul class="nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active"
+                       data-toggle="dropdown"
+                       href="#" role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">Genres</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Drame</a>
+                        <a class="dropdown-item" href="#">Comédie</a>
+                        <a class="dropdown-item" href="#">Triller</a>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Fantastique</a>
+                        <a class="dropdown-item" href="#">Horreur</a>
+                        <a class="dropdown-item" href="#">Romantique</a>
+                        <a class="dropdown-item" href="#">Aventure</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Films</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">Séries</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">TV</a>
+                        <a class="dropdown-item" href="#">Japanaises</a>
+                        <a class="dropdown-item" href="#">Animés</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">Artistes</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Actrices</a>
+                        <a class="dropdown-item" href="#">Acteurs</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Réalisateurs</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+            </form>
+        </div>
     </div>
 {% endblock %}
