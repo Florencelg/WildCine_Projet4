@@ -5,16 +5,40 @@
 {% block header %}{% include 'home/_navbar.html.twig' %}{% endblock %}
 
 {% block body %}
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+    <div id="carousel" class="container-fluid carousel slide mp-5 bg-dark" data-ride="carousel">
+        <div class="carousel-inner text-center">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="https://www.cinemaspathegaumont.com/media/movie/9102757/poster/360x480.jpg" alt="First slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9102757/poster/360x480.jpg" alt="First slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9103500/poster/360x480.jpg"
+                     alt="Second slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9103487/poster/360x480.jpg" alt="Third slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9102757/poster/360x480.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://www.cinemaspathegaumont.com/media/movie/9103500/poster/360x480.jpg" alt="Second slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9103500/poster/360x480.jpg"
+                     alt="Second slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9103487/poster/360x480.jpg" alt="Third slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9102757/poster/360x480.jpg" alt="First slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9103487/poster/360x480.jpg" alt="Third slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://www.cinemaspathegaumont.com/media/movie/9103487/poster/360x480.jpg" alt="Third slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9103487/poster/360x480.jpg" alt="Third slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9102757/poster/360x480.jpg" alt="First slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9103500/poster/360x480.jpg"
+                     alt="Second slide">
+                <img class=""
+                     src="https://www.cinemaspathegaumont.com/media/movie/9102757/poster/360x480.jpg" alt="First slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -26,62 +50,120 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div>
-        <div>
-            <ul class="nav nav-pills">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active"
-                       data-toggle="dropdown"
-                       href="#" role="button"
-                       aria-haspopup="true"
-                       aria-expanded="false">Genres</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Drame</a>
-                        <a class="dropdown-item" href="#">Comédie</a>
-                        <a class="dropdown-item" href="#">Triller</a>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Fantastique</a>
-                        <a class="dropdown-item" href="#">Horreur</a>
-                        <a class="dropdown-item" href="#">Romantique</a>
-                        <a class="dropdown-item" href="#">Aventure</a>
+
+    <div class="navPills mt-5 mp-5">
+        <ul class="nav justify-content-center nav-pills">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active bg-dark"
+                   data-toggle="dropdown"
+                   href="#" role="button"
+                   aria-haspopup="true"
+                   aria-expanded="false">Genres</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Drame</a>
+                    <a class="dropdown-item" href="#">Comédie</a>
+                    <a class="dropdown-item" href="#">Triller</a>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Fantastique</a>
+                    <a class="dropdown-item" href="#">Horreur</a>
+                    <a class="dropdown-item" href="#">Romantique</a>
+                    <a class="dropdown-item" href="#">Aventure</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-black-50" href="#">Films</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-black-50"
+                   data-toggle="dropdown"
+                   href="#" role="button"
+                   aria-haspopup="true"
+                   aria-expanded="false">Séries</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">TV</a>
+                    <a class="dropdown-item" href="#">Japanaises</a>
+                    <a class="dropdown-item" href="#">Animés</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-black-50"
+                   data-toggle="dropdown"
+                   href="#" role="button"
+                   aria-haspopup="true"
+                   aria-expanded="false">Artistes</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Actrices</a>
+                    <a class="dropdown-item" href="#">Acteurs</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-black-50" href="#">Réalisateurs</a>
+            </li>
+            <li>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Recherche</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container laUne mt-5 mp-5 bg-dark">
+        <div class="row">
+            <div class="main_blog text-center roomy-100">
+                <div class="col-sm-12">
+                    <div class="head_title text-center">
+                        <h2>A la une !</h2>
+                        <div class="separator_auto"></div>
+                        <p>Les dernières nouveautées à découvrir! </p>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Films</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"
-                       data-toggle="dropdown"
-                       href="#" role="button"
-                       aria-haspopup="true"
-                       aria-expanded="false">Séries</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">TV</a>
-                        <a class="dropdown-item" href="#">Japanaises</a>
-                        <a class="dropdown-item" href="#">Animés</a>
+                </div>
+
+                <div class="row">
+                    <div class="d-inline-flex col-md-4">
+                        <div class="blog_item m-top-20">
+                            <div class="blog_item_img">
+                                <img class=""
+                                     src="https://www.cinemaspathegaumont.com/media/movie/9102757/poster/360x480.jpg"
+                                     alt="First slide">
+                            </div>
+                            <div class="blog_text roomy-40">
+                                <h6>GLASS</h6>
+                                <p><em><a href="">Info du Film</a> /<a href="">Artistes</a>/<a href="">Réalisateur</a></em>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"
-                       data-toggle="dropdown"
-                       href="#" role="button"
-                       aria-haspopup="true"
-                       aria-expanded="false">Artistes</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Actrices</a>
-                        <a class="dropdown-item" href="#">Acteurs</a>
+                    <div class="d-inline-flex col-md-4">
+                        <div class="blog_item m-top-20">
+                            <div class="blog_item_img">
+                                <img class=""
+                                     src="https://www.cinemaspathegaumont.com/media/movie/9103500/poster/360x480.jpg"
+                                     alt="Second slide">
+                            </div>
+                            <div class="blog_text roomy-40">
+                                <h6>La Bayadère</h6>
+                                <p><em><a href="">Info du Film</a> /<a href="">Artistes</a>/<a href="">Réalisateur</a></em>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Réalisateurs</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
-            </form>
+                    <div class="d-inline-flex col-md-4">
+                        <div class="blog_item m-top-20">
+                            <div class="blog_item_img">
+                                <img class=""
+                                     src="https://www.cinemaspathegaumont.com/media/movie/9103487/poster/360x480.jpg"
+                                     alt="Third slide">
+                            </div>
+                            <div class="blog_text roomy-40">
+                                <h6>Facteur Cheval</h6>
+                                <p><em><a href="">Info du Film</a> /<a href="">Artistes</a>/<a href="">Réalisateur</a></em>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
