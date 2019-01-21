@@ -21,52 +21,7 @@ class Genre
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $drama;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $comedy;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $triller;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $action;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $fantastic;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $horror;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $romantic;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $adventure;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Movie", mappedBy="genres")
-     */
-    private $movies;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Serie", mappedBy="genres")
-     */
-    private $series;
+    private $name;
 
     public function __construct()
     {
@@ -79,98 +34,14 @@ class Genre
         return $this->id;
     }
 
-    public function getDrama(): ?string
+    public function getName(): ?string
     {
-        return $this->drama;
+        return $this->name;
     }
 
-    public function setDrama(string $drama): self
+    public function setName(string $name): self
     {
-        $this->drama = $drama;
-
-        return $this;
-    }
-
-    public function getComedy(): ?string
-    {
-        return $this->comedy;
-    }
-
-    public function setComedy(string $comedy): self
-    {
-        $this->comedy = $comedy;
-
-        return $this;
-    }
-
-    public function getTriller(): ?string
-    {
-        return $this->triller;
-    }
-
-    public function setTriller(string $triller): self
-    {
-        $this->triller = $triller;
-
-        return $this;
-    }
-
-    public function getAction(): ?string
-    {
-        return $this->action;
-    }
-
-    public function setAction(string $action): self
-    {
-        $this->action = $action;
-
-        return $this;
-    }
-
-    public function getFantastic(): ?string
-    {
-        return $this->fantastic;
-    }
-
-    public function setFantastic(string $fantastic): self
-    {
-        $this->fantastic = $fantastic;
-
-        return $this;
-    }
-
-    public function getHorror(): ?string
-    {
-        return $this->horror;
-    }
-
-    public function setHorror(string $horror): self
-    {
-        $this->horror = $horror;
-
-        return $this;
-    }
-
-    public function getRomantic(): ?string
-    {
-        return $this->romantic;
-    }
-
-    public function setRomantic(string $romantic): self
-    {
-        $this->romantic = $romantic;
-
-        return $this;
-    }
-
-    public function getAdventure(): ?string
-    {
-        return $this->adventure;
-    }
-
-    public function setAdventure(string $adventure): self
-    {
-        $this->adventure = $adventure;
+        $this->name = $name;
 
         return $this;
     }
