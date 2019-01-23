@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/artist")
+ * @route("/artist")
  */
 class ArtistController extends AbstractController
 {
@@ -25,6 +25,15 @@ class ArtistController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/artist/", name="artist_adminIndex", methods={"GET"})
+     */
+    public function adminIndex(ArtistRepository $artistRepository): Response
+    {
+        return $this->render('artist/artist/adminIndex.html.twig', [
+            'artists' => $artistRepository->findAll(),
+        ]);
+    }
     /**
      * @Route("/new", name="artist_new", methods={"GET","POST"})
      */
