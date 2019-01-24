@@ -1,0 +1,22 @@
+easy_admin:
+    site_name: 'Wild Cine'
+    entities:
+        Artist:
+            class: App\Entity\Artist
+        Director:
+            class: App\Entity\Director
+        Genre:
+            class: App\Entity\Genre
+        Movie:
+            class: App\Entity\Movie
+        Serie:
+            class: App\Entity\Serie
+    design:
+        brand_color: '#BC8F8F'
+        assets:
+          favicon: '/assets/backend/favicon.png'
+          css:
+          - 'bundles/easyadmin/bootstrap-all.css'
+          - 'css/admin.css'
+          js:
+          - 'bundles/easyadmin/bootstrap-all.js'
