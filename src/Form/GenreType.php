@@ -12,14 +12,7 @@ class GenreType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('drama')
-            ->add('comedy')
-            ->add('triller')
-            ->add('action')
-            ->add('fantastic')
-            ->add('horror')
-            ->add('romantic')
-            ->add('adventure')
+            ->add('name')
             ->add('movies')
             ->add('series')
         ;

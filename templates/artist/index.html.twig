@@ -3,39 +3,36 @@
 {% block title %}Artist index{% endblock %}
 
 {% block body %}
-    <h1>Artist index</h1>
+<div class="container-fluid artiste pt-5 pb-5 bg-dark">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>First_name</th>
-                <th>Birth_date</th>
-                <th>Biography</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for artist in artists %}
-            <tr>
-                <td>{{ artist.id }}</td>
-                <td>{{ artist.name }}</td>
-                <td>{{ artist.firstName }}</td>
-                <td>{{ artist.birthDate }}</td>
-                <td>{{ artist.biography }}</td>
-                <td>
-                    <a href="{{ path('artist_show', {'id': artist.id}) }}">show</a>
-                    <a href="{{ path('artist_edit', {'id': artist.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <a href="{{ path('home') }}" class="btn btn-outline-warning badge-pill">Retour</a>
 
-    <a href="{{ path('artist_new') }}">Create new</a>
-{% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+            <img class=""
+                 src={{ asset('build/images/Bobine2.png') }}
+                 alt="bobine">
+            </div>
+            <div class="col-lg-8 text-left mt-5 pt-5 pl-5">
+                <h1 class="artistIndex">Artistes</h1>
+                <div class="separator_auto"></div>
+                <p class="artistIndex">Les artistes du moment !</p>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for artist in artists %}
+                <div class="col-lg-4 mt-5">
+                    <div class="cardActeur card" style="width: 18rem;">
+                        <a href="{{ path('artist_show', {'id': artist.id},{'picture': artist.picture}) }}">
+                            <img class="cardActeur artistImg card-img-top"
+                                 src="{{ asset('build/images/' ~artist.picture) }}"
+                                 alt="Picture Artist">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}

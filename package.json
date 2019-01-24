@@ -1,11 +1,13 @@
 {
   "devDependencies": {
-    "boostrap": "^2.0.0",
+    "@symfony/webpack-encore": "^0.22.4",
+    "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.6"
-  },
-  "dependencies": {
-    "webpack": "^4.28.4"
+    "node-sass": "^4.10.0",
+    "popper.js": "^1.14.6",
+    "sass-loader": "^7.0.1",
+    "slick-carousel": "^1.8.1",
+    "webpack-notifier": "^1.6.0"
   },
   "license": "UNLICENSED",
   "private": true,
@@ -14,5 +16,10 @@
     "dev": "encore dev",
     "watch": "encore dev --watch",
     "build": "encore production --progress"
-  }
+  },
+  "name": "wildMovies",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Florencelg/WildCine_Projet4.git",
+  "author": "Florence LG <flo.lg.gautier@gmail.com>"
 }

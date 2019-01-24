@@ -1,0 +1,24 @@
+.artist{
+  height: 100vh;
+}
+span {
+  text-decoration-color: #1b1e21;
+  font-weight:bold;
+}
+.cardActeur {
+  box-shadow: 5px 2px 5px 2px rgba(0,0,0,.16),5px 2px 10px 5px rgba(0,0,0,.12);
+  border-radius: 20px;
+}
+h1, h2{
+  font-family:Yanone, Kaffeesatz, sans-serif;
+  font-weight:bold;
+}
+.artistImg {
+  min-width: 18rem;
+  max-width: 18rem;
+  min-height: 25rem;
+  max-height: 25rem;
+}
+.artistIndex {
+  color: white;
+}

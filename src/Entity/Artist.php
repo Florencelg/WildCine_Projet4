@@ -53,6 +53,16 @@ class Artist
      */
     private $directors;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $sex;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $picture;
+
     public function __construct()
     {
         $this->movies = new ArrayCollection();
@@ -191,6 +201,30 @@ class Artist
         if ($this->directors->contains($director)) {
             $this->directors->removeElement($director);
         }
+
+        return $this;
+    }
+
+    public function getSex(): ?string
+    {
+        return $this->sex;
+    }
+
+    public function setSex(string $sex): self
+    {
+        $this->sex = $sex;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
