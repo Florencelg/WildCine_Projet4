@@ -20,6 +20,8 @@
                     <div class="card-body mt-5 pt-5 col-lg-8">
                         <h2 class="card-title">{{ director.name }} {{ director.firstName }}</h2>
                         <p class="mt-5 mb-5"><span>Date de naissance:</span> {{ director.birthDate }}</p>
+                        <h3>Biography</h3>
+                        <p class="card-text mt-5">{{ director.biography }}</p>
                         <a href="{{ path('director_index') }}" class="btn btn-outline-dark badge-pill">Retour</a>
                     </div>
                 </div>

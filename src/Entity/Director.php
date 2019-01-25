@@ -53,6 +53,11 @@ class Director
      */
     private $picture;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $biography;
+
     public function __construct()
     {
         $this->movies = new ArrayCollection();
@@ -199,6 +204,18 @@ class Director
     public function setPicture(string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getBiography(): ?string
+    {
+        return $this->biography;
+    }
+
+    public function setBiography(string $biography): self
+    {
+        $this->biography = $biography;
 
         return $this;
     }
