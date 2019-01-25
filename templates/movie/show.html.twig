@@ -1,38 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Movie{% endblock %}
+{% block title %}Réalisateurs{% endblock %}
 
 {% block body %}
-    <h1>Movie</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ movie.id }}</td>
-            </tr>
-            <tr>
-                <th>Synopsis</th>
-                <td>{{ movie.synopsis }}</td>
-            </tr>
-            <tr>
-                <th>Picture</th>
-                <td>{{ movie.picture }}</td>
-            </tr>
-            <tr>
-                <th>Year</th>
-                <td>{{ movie.year }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ movie.title }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('movie_index') }}">back to list</a>
-
-    <a href="{{ path('movie_edit', {'id': movie.id}) }}">edit</a>
-
-    {{ include('movie/_delete_form.html.twig') }}
+    <div class="container-fluid artist backgroundHome">
+        <div class="container text-center">
+            <h1 class="mb-5 pt-5">Films</h1>
+            <div class="cardActeur card mt-5 pb-5">
+                <div class="row">
+                    <div class="col-lg-4 mt-5">
+                        <div class="cardActeur card ml-5 mt-5" style="width: 18rem;">
+                            <a href="{{ path('movie_show', {'id': movie.id},{'picture': movie.picture}) }}">
+                                <img class="cardActeur artistImg card-img-top"
+                                     src="{{ asset('build/images/' ~movie.picture) }}"
+                                     alt="Picture Movie">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body mt-5 pt-5 col-lg-8">
+                        <h2 class="card-title">{{ movie.title }}</h2>
+                        <p class="mt-5 mb-5"><span>Sortie du film: </span> {{ movie.year }}</p>
+                        <h3>Synopsis</h3>
+                        <p class="card-text mt-5">{{ movie.synopsis }}</p>
+                        <a href="{{ path('movie_index') }}" class="btn btn-outline-dark badge-pill">Retour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
