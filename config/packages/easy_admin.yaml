@@ -1,8 +1,14 @@
 easy_admin:
-    site_name: 'Wild Cine'
+    site_name: 'Admin: Wild Ciné'
+    formats:
+        date:     'd/m/Y'
     entities:
         Artist:
             class: App\Entity\Artist
+            list:
+                fields: ['name' , 'firstName' , 'birthDate' , 'biography' , 'picture' , 'sex']
+            search:
+                fields: ['name', 'firstName' , 'birthDate' , 'biography' , 'picture']
         Director:
             class: App\Entity\Director
         Genre:
