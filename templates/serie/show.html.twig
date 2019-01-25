@@ -1,38 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Serie{% endblock %}
+{% block title %}Séries{% endblock %}
 
 {% block body %}
-    <h1>Serie</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ serie.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ serie.title }}</td>
-            </tr>
-            <tr>
-                <th>Synopsis</th>
-                <td>{{ serie.synopsis }}</td>
-            </tr>
-            <tr>
-                <th>Picture</th>
-                <td>{{ serie.picture }}</td>
-            </tr>
-            <tr>
-                <th>Year</th>
-                <td>{{ serie.year }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('serie_index') }}">back to list</a>
-
-    <a href="{{ path('serie_edit', {'id': serie.id}) }}">edit</a>
-
-    {{ include('serie/_delete_form.html.twig') }}
+    <div class="container-fluid artist backgroundHome">
+        <div class="container text-center">
+            <h1 class="mb-5 pt-5">Séries</h1>
+            <div class="cardActeur card mt-5 pb-5">
+                <div class="row">
+                    <div class="col-lg-4 mt-5">
+                        <div class="cardActeur card ml-5 mt-5" style="width: 18rem;">
+                            <a href="{{ path('serie_show', {'id': serie.id},{'picture': serie.picture}) }}">
+                                <img class="cardActeur artistImg card-img-top"
+                                     src="{{ asset('build/images/' ~serie.picture) }}"
+                                     alt="Picture Serie">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body mt-5 pt-5 col-lg-8">
+                        <h2 class="card-title">{{ serie.title }}</h2>
+                        <p class="mt-5 mb-5"><span>Sortie de la Série: </span> {{ serie.year }}</p>
+                        <h3>Synopsis</h3>
+                        <p class="card-text mt-5">{{ serie.synopsis }}</p>
+                        <a href="{{ path('serie_index') }}" class="btn btn-outline-dark badge-pill">Retour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
