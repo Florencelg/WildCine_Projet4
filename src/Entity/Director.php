@@ -48,6 +48,11 @@ class Director
      */
     private $artists;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $picture;
+
     public function __construct()
     {
         $this->movies = new ArrayCollection();
@@ -182,6 +187,18 @@ class Director
             $this->artists->removeElement($artist);
             $artist->removeDirector($this);
         }
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }

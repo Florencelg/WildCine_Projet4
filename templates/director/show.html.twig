@@ -1,34 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Director{% endblock %}
+{% block title %}Réalisateurs{% endblock %}
 
 {% block body %}
-    <h1>Director</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ director.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ director.name }}</td>
-            </tr>
-            <tr>
-                <th>First_name</th>
-                <td>{{ director.firstName }}</td>
-            </tr>
-            <tr>
-                <th>Birth_date</th>
-                <td>{{ director.birthDate }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('director_index') }}">back to list</a>
-
-    <a href="{{ path('director_edit', {'id': director.id}) }}">edit</a>
-
-    {{ include('director/_delete_form.html.twig') }}
+    <div class="container-fluid artist backgroundHome">
+        <div class="container text-center">
+            <h1 class="mb-5 pt-5">Réalisateurs</h1>
+            <div class="cardActeur card mt-5 pb-5">
+                <div class="row">
+                    <div class="col-lg-4 mt-5">
+                        <div class="cardActeur card ml-5 mt-5" style="width: 18rem;">
+                            <a href="{{ path('director_show', {'id': director.id},{'picture': director.picture}) }}">
+                                <img class="cardActeur artistImg card-img-top"
+                                     src="{{ asset('build/images/' ~director.picture) }}"
+                                     alt="Picture Artist">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body mt-5 pt-5 col-lg-8">
+                        <h2 class="card-title">{{ director.name }} {{ director.firstName }}</h2>
+                        <p class="mt-5 mb-5"><span>Date de naissance:</span> {{ director.birthDate }}</p>
+                        <a href="{{ path('director_index') }}" class="btn btn-outline-dark badge-pill">Retour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
