@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wilde Ciné: Films{% endblock %}
+{% block title %}Artors index{% endblock %}
 
 {% block body %}
-<div class="container-fluid artiste pt-5 pb-5 bg-dark">
+    <div class="container-fluid artiste pt-5 pb-5 bg-dark">
 
     <a href="{{ path('home') }}" class="btn btn-outline-warning badge-pill">Retour</a>
 
@@ -15,25 +15,24 @@
                      alt="bobine">
             </div>
             <div class="col-lg-8 text-left mt-5 pt-5 pl-5">
-                <h1 class="artistIndex">Films</h1>
+                <h1 class="artistIndex">Actrices</h1>
                 <div class="separator_auto"></div>
-                <p class="artistIndex">Les Films du moment !</p>
+                <p class="artistIndex">Les actrices du moment !</p>
             </div>
         </div>
 
         <div class="row">
-            {% for movie in movies %}
-
+            {% for artist in artists %}
                 <div class="col-lg-4 mt-5">
                     <div class="cardActeur card" style="width: 18rem;">
-                        <a href="{{ path('movie_show', {'id': movie.id},{'picture': movie.picture}) }}">
+                        <a href="{{ path('artist_show', {'id': artist.sex},{'picture': artist.picture}) }}">
                             <img class="cardActeur artistImg card-img-top"
-                                 src="{{ asset('build/images/' ~movie.picture) }}"
-                                 alt="Picture Movies">
+                                 src="{{ asset('build/images/' ~artist.picture) }}"
+                                 alt="Picture Artist">
                         </a>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
-    {% endblock %}
+{% endblock %}
