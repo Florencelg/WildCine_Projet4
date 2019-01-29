@@ -1,49 +1,36 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}Genre index{% endblock %}
+{% block title %}Wilde Ciné: Genres{% endblock %}
 
 {% block body %}
-    <h1>Genre index</h1>
+<div class="container-fluid artiste pt-5 pb-5 bg-dark">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Drama</th>
-                <th>Comedy</th>
-                <th>Triller</th>
-                <th>Action</th>
-                <th>Fantastic</th>
-                <th>Horror</th>
-                <th>Romantic</th>
-                <th>Adventure</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for genre in genres %}
-            <tr>
-                <td>{{ genre.id }}</td>
-                <td>{{ genre.drama }}</td>
-                <td>{{ genre.comedy }}</td>
-                <td>{{ genre.triller }}</td>
-                <td>{{ genre.action }}</td>
-                <td>{{ genre.fantastic }}</td>
-                <td>{{ genre.horror }}</td>
-                <td>{{ genre.romantic }}</td>
-                <td>{{ genre.adventure }}</td>
-                <td>
-                    <a href="{{ path('genre_show', {'id': genre.id}) }}">show</a>
-                    <a href="{{ path('genre_edit', {'id': genre.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="10">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <a href="{{ path('home') }}" class="btn btn-outline-warning badge-pill">Retour</a>
 
-    <a href="{{ path('genre_new') }}">Create new</a>
-{% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <img class=""
+                     src={{ asset('build/images/Bobine2.png') }}
+                     alt="bobine">
+            </div>
+            <div class="col-lg-8 text-left mt-5 pt-5 pl-5">
+                <h1 class="artistIndex">Genres</h1>
+                <div class="separator_auto"></div>
+                <p class="artistIndex">Les genres</p>
+            </div>
+        </div>
+
+        <div class="row">
+                {% for genre in genres %}
+                <div class="col-lg-2 text-center mt-5">
+                    <div class="cardActeur" style="width: 8rem;">
+                        <a href="{{ path('genre_show', {'id': genre.id}) }}">
+                            {{ genre.name }}
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}

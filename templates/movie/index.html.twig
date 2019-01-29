@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Wilde Ciné: Films{% endblock %}
 
@@ -23,6 +23,7 @@
 
         <div class="row">
             {% for movie in movies %}
+
                 <div class="col-lg-4 mt-5">
                     <div class="cardActeur card" style="width: 18rem;">
                         <a href="{{ path('movie_show', {'id': movie.id},{'picture': movie.picture}) }}">

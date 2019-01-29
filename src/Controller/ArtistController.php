@@ -26,6 +26,32 @@ class ArtistController extends AbstractController
     }
 
     /**
+     * @Route("/actors", name="actors_maneIndex", methods={"GET"})
+     * @param ArtistRepository $artistRepository
+     * @return Response
+     */
+    public function manIndex (ArtistRepository $artistRepository): Response
+    {
+
+        return $this->render('artist/maneIndex.html.twig',[
+            'artists' => $artistRepository->findBy(['sex' => 'H']),
+        ]);
+    }
+
+    /**
+     * @Route("/actors/act", name="act_womanIndex", methods={"GET"})
+     * @param ArtistRepository $artistRepository
+     * @return Response
+     */
+    public function womanIndex (ArtistRepository $artistRepository): Response
+    {
+
+        return $this->render('artist/womanIndex.html.twig',[
+            'artists' => $artistRepository->findBy(['sex' => 'F']),
+        ]);
+    }
+
+    /**
      * @Route("/artist/", name="artist_adminIndex", methods={"GET"})
      */
     public function adminIndex(ArtistRepository $artistRepository): Response

@@ -16,6 +16,8 @@ class ArtistType extends AbstractType
             ->add('first_name')
             ->add('birth_date')
             ->add('biography')
+            ->add('sex')
+            ->add('picture')
             ->add('movies')
             ->add('series')
             ->add('directors')

@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Wilde Ciné: Séries{% endblock %}
+{% block title %}Actors index{% endblock %}
 
 {% block body %}
     <div class="container-fluid artiste pt-5 pb-5 bg-dark">
@@ -15,20 +15,20 @@
                      alt="bobine">
             </div>
             <div class="col-lg-8 text-left mt-5 pt-5 pl-5">
-                <h1 class="artistIndex">Séries</h1>
+                <h1 class="artistIndex">Acteurs</h1>
                 <div class="separator_auto"></div>
-                <p class="artistIndex">Les Séries</p>
+                <p class="artistIndex">Les acteurs du moment !</p>
             </div>
         </div>
 
         <div class="row">
-            {% for serie in series %}
+            {% for artist in artists %}
                 <div class="col-lg-4 mt-5">
                     <div class="cardActeur card" style="width: 18rem;">
-                        <a href="{{ path('serie_show', {'id': serie.id},{'picture': serie.picture}) }}">
+                        <a href="{{ path('artist_show', {'id': artist.id},{'picture': artist.picture}) }}">
                             <img class="cardActeur artistImg card-img-top"
-                                 src="{{ asset('build/images/' ~serie.picture) }}"
-                                 alt="Picture Movies">
+                                 src="{{ asset('build/images/' ~artist.picture) }}"
+                                 alt="Picture Artist">
                         </a>
                     </div>
                 </div>
