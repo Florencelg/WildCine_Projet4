@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Artors index{% endblock %}
 
@@ -25,7 +25,7 @@
             {% for artist in artists %}
                 <div class="col-lg-4 mt-5">
                     <div class="cardActeur card" style="width: 18rem;">
-                        <a href="{{ path('artist_show', {'id': artist.sex},{'picture': artist.picture}) }}">
+                        <a href="{{ path('artist_show', {'id': artist.id},{'picture': artist.picture}) }}">
                             <img class="cardActeur artistImg card-img-top"
                                  src="{{ asset('build/images/' ~artist.picture) }}"
                                  alt="Picture Artist">

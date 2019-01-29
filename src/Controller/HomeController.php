@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Repository\GenreRepository;
+use App\Repository\MovieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,8 +24,16 @@ class HomeController extends AbstractController
      * @Route("/", name="home")
      * @return Response
      */
-    public function index()
+    public function index(GenreRepository $genreRepository, MovieRepository $movieRepository)
     {
-        return $this->render('home/index.html.twig');
+        $movies = $movieRepository->findAll();
+        $genres = $genreRepository->findAll();
+        $moviesNovelty = $movieRepository->findByNovelty(true);
+
+        return $this->render('home/index.html.twig', [
+            'movies' => $movies,
+            'genres' => $genres,
+            'moviesNovelty' => $moviesNovelty,
+        ]);
     }
 }

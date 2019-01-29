@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Films{% endblock %}
 
@@ -22,7 +22,27 @@
                         <p class="mt-5 mb-5"><span>Sortie du film: </span> {{ movie.year }}</p>
                         <h3>Synopsis</h3>
                         <p class="card-text mt-5">{{ movie.synopsis }}</p>
-                        <a href="{{ path('movie_index') }}" class="btn btn-outline-dark badge-pill">Retour</a>
+                        <div class="row">
+                            <div class="col">
+                                <h3>Réalisateur</h3>
+                                <div class="cardActeur mt-2">
+                                    <a href="{{ path('director_show', {'id': director.id}) }}">
+                                        {{ movie.directors.name }}
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3>Acteurs</h3>
+                                {% for artist in artists %}
+                                    <div class="cardActeur mt-2">
+                                        <a href="{{ path('artist_show', {'id': artist.id}) }}">
+                                            {{ artist.firstname }} {{ artist.name }}
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <a href="{{ path('movie_index') }}" class="mt-3 btn btn-outline-dark badge-pill">Retour</a>
                     </div>
                 </div>
             </div>

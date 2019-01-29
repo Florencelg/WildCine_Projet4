@@ -23,6 +23,11 @@ class Genre
      */
     private $name;
 
+    /**
+    * @ORM\ManyToMany(targetEntity="App\Entity\Genre", mappedBy="genres")
+    */
+    private $movies;
+
     public function __construct()
     {
         $this->movies = new ArrayCollection();

@@ -53,6 +53,11 @@ class Movie
      */
     private $genres;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $novelty;
+
     public function __construct()
     {
         $this->artists = new ArrayCollection();
@@ -172,6 +177,23 @@ class Movie
         if ($this->genres->contains($genre)) {
             $this->genres->removeElement($genre);
         }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->title;
+    }
+
+    public function getNovelty(): ?bool
+    {
+        return $this->novelty;
+    }
+
+    public function setNovelty(?bool $novelty): self
+    {
+        $this->novelty = $novelty;
 
         return $this;
     }

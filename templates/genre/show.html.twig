@@ -1,54 +1,38 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}Genre{% endblock %}
+{% block title %}Wilde Ciné: {{ genre.name }}{% endblock %}
 
 {% block body %}
-    <h1>Genre</h1>
+    <div class="container-fluid artiste pt-5 pb-5 bg-dark">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ genre.id }}</td>
-            </tr>
-            <tr>
-                <th>Drama</th>
-                <td>{{ genre.drama }}</td>
-            </tr>
-            <tr>
-                <th>Comedy</th>
-                <td>{{ genre.comedy }}</td>
-            </tr>
-            <tr>
-                <th>Triller</th>
-                <td>{{ genre.triller }}</td>
-            </tr>
-            <tr>
-                <th>Action</th>
-                <td>{{ genre.action }}</td>
-            </tr>
-            <tr>
-                <th>Fantastic</th>
-                <td>{{ genre.fantastic }}</td>
-            </tr>
-            <tr>
-                <th>Horror</th>
-                <td>{{ genre.horror }}</td>
-            </tr>
-            <tr>
-                <th>Romantic</th>
-                <td>{{ genre.romantic }}</td>
-            </tr>
-            <tr>
-                <th>Adventure</th>
-                <td>{{ genre.adventure }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <a href="{{ path('home') }}" class="btn btn-outline-warning badge-pill">Retour</a>
 
-    <a href="{{ path('genre_index') }}">back to list</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <img class=""
+                     src={{ asset('build/images/Bobine2.png') }}
+                     alt="bobine">
+            </div>
+            <div class="col-lg-8 text-left mt-5 pt-5 pl-5">
+                <h1 class="artistIndex">{{ genre.name }}</h1>
+                <div class="separator_auto"></div>
+                <p class="artistIndex">Films : {{ genre.name }}</p>
+            </div>
+        </div>
 
-    <a href="{{ path('genre_edit', {'id': genre.id}) }}">edit</a>
-
-    {{ include('genre/_delete_form.html.twig') }}
+        <div class="row">
+            {% for movie in movies %}
+                <div class="col-lg-4 mt-5">
+                    <div class="cardActeur card" style="width: 18rem;">
+                        <a href="{{ path('movie_show', {'id': movie.id},{'picture': movie.picture}) }}">
+                            <img class="cardActeur artistImg card-img-top"
+                                 src="{{ asset('build/images/' ~movie.picture) }}"
+                                 alt="Picture Movies">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
