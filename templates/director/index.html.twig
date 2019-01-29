@@ -3,36 +3,35 @@
 {% block title %}Wilde Ciné: Réalisateurs{% endblock %}
 
 {% block body %}
-<div class="container-fluid artiste pt-5 pb-5 bg-dark">
-
-    <a href="{{ path('home') }}" class="btn btn-outline-warning badge-pill">Retour</a>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <img class=""
-                     src={{ asset('build/images/Bobine2.png') }}
-                     alt="bobine">
-            </div>
-            <div class="col-lg-8 text-left mt-5 pt-5 pl-5">
-                <h1 class="artistIndex">Réalisateurs</h1>
-                <div class="separator_auto"></div>
-                <p class="artistIndex">Les Réalisateurs du moment !</p>
-            </div>
-        </div>
-
-        <div class="row">
-            {% for director in directors %}
-                <div class="col-lg-4 mt-5">
-                    <div class="cardActeur card" style="width: 18rem;">
-                        <a href="{{ path('director_show', {'id': director.id},{'picture': director.picture}) }}">
-                            <img class="cardActeur artistImg card-img-top"
-                                 src="{{ asset('build/images/' ~director.picture) }}"
-                                 alt="Picture Réalisateur">
-                        </a>
-                    </div>
+    <div class="container-fluid artiste pt-5 pb-5 bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class=""
+                         src={{ asset('build/images/Bobine2.png') }}
+                         alt="bobine">
                 </div>
-            {% endfor %}
+                <div class="col-lg-8 text-left mt-5 pt-5 pl-5">
+                    <h1 class="artistIndex">Réalisateurs</h1>
+                    <div class="separator_auto"></div>
+                    <p class="artistIndex">Les Réalisateurs du moment !</p>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for director in directors %}
+                    <div class="col-lg-4 mt-5">
+                        <div class="cardActeur card" style="width: 18rem;">
+                            <a href="{{ path('director_show', {'id': director.id},{'picture': director.picture}) }}">
+                                <img class="cardActeur artistImg card-img-top"
+                                     src="{{ asset('build/images/' ~director.picture) }}"
+                                     alt="Picture Réalisateur">
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
+        <a href="{{ path('home') }}" class="btn btn-outline-warning badge-pill">Retour</a>
     </div>
-    {% endblock %}
+{% endblock %}
