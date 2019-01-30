@@ -85,8 +85,7 @@ class AppAppAuthenticateurAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-         return new RedirectResponse($this->router->generate('easyadmin'));
-//        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+         return new RedirectResponse($this->router->generate('home'));
     }
 
     protected function getLoginUrl()
