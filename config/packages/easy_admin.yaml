@@ -17,6 +17,10 @@ easy_admin:
             class: App\Entity\Movie
         Serie:
             class: App\Entity\Serie
+        User:
+            class: App\Entity\User
+            list:
+                fields: ['email', 'roles', 'password']
     design:
         brand_color: '#BC8F8F'
         assets:
