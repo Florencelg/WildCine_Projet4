@@ -181,11 +181,6 @@ class Movie
         return $this;
     }
 
-    public function __toString()
-    {
-        return (string) $this->title;
-    }
-
     public function getNovelty(): ?bool
     {
         return $this->novelty;
@@ -196,5 +191,9 @@ class Movie
         $this->novelty = $novelty;
 
         return $this;
+    }
+    public function __toString()
+    {
+         return $this->title;
     }
 }
