@@ -1,11 +1,12 @@
 {
   "devDependencies": {
     "@symfony/webpack-encore": "^0.22.4",
+    "boostrap": "^2.0.0",
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
-    "node-sass": "^4.10.0",
-    "popper.js": "^1.14.6",
-    "sass-loader": "^7.0.1",
+    "node-sass": "^4.12.0",
+    "popper.js": "^1.14.7",
+    "sass-loader": "^7.1.0",
     "slick-carousel": "^1.8.1",
     "webpack-notifier": "^1.6.0"
   },
@@ -21,5 +22,5 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Florencelg/WildCine_Projet4.git",
-  "author": "Florence LG <flo.lg.gautier@gmail.com>"
+  "author": "Florence LG"
 }
