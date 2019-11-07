@@ -26,6 +26,18 @@ class GenreController extends AbstractController
     }
 
     /**
+     * @Route("/drame", name="drame_genreIndex", methods={"GET"})
+     * @param GenreRepository\ $genreRepository
+     * @return Response
+     */
+    public function genreIndex (GenreRepository $genreRepository): Response
+    {
+
+        return $this->render('drame/genreIndex.html.twig',[
+            'genresDrame' => $genreRepository->findBy(['drame' => 'H']),
+        ]);
+    }
+    /**
      * @Route("/new", name="genre_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
